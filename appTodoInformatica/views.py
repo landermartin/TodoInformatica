@@ -4,35 +4,35 @@ from .models import Tienda,Categoria,Articulos,Provincia
 
 
 # Create your views here.
+def index_categoria(request):
+    categorias = get_list_or_404(Categoria.objects.order_by('nombre'))
+    context = {'lista_categorias': categorias }
+    return render(request, 'index.html', context)
+
+def show_categoria(request, categoria_id):
+    categoria = get_object_or_404(Categoria, pk=categoria_id)
+    context = {'categoria': categoria }
+    return render(request, 'detail.html', context)
+
 def index_articulos(request):
-    articulos= get_list_or_404(Articulos.objects.order_by('nombre'))
-    output=', '.join([d.nombre for d in articulos])
-    return HttpResponse(output)
-    
-    """context = {'lista_departamentos': articulos }
-    return render(request, 'index.html', context)"""
+    categoria = get_object_or_404(Categoria, pk=categoria_id)
+    articulos =  categoria.articulo_set.all()
+    context = {'categoria': categoria, 'articulos' : articulos }
+    return render(request, 'empleados.html', context)
 
 def show_articulo(request,articulo_id):
-    articulo = get_object_or_404(Articulos,pk=articulo_id)
-    output = f'Detalles de la categoria: {articulo.id}, {articulo.nombre},{articulo.marca},{articulo.precio},{articulo.marca},{articulo.stock},{articulo.categoria},{articulo.vendedor}'
-    return HttpResponse(output)
-
-def index_categoria(request):
-    categoria= get_list_or_404(Categoria.objects.order_by('nombre'))
-    output=', '.join([d.nombre for d in categoria])
-    return HttpResponse(output)
-
-def show_categoria(request,categoria_id):
-    categoria = get_object_or_404(Categoria,pk=categoria_id)
-    output = f'Detalles de la categoria: {categoria.id}, {categoria.nombre}'
-    return HttpResponse(output)
+    articulo = get_object_or_404(Articulos, pk=articulo_id)
+    vendedor =  articulo.vendedor.all()
+    context = { 'articulo': articulo, 'vendedor' : vendedor }
+    return render(request, 'articulo.html', context)
 
 def index_Tiendas(request):
-    tienda= get_list_or_404(Tienda.objects.order_by('nombre'))
-    output=', '.join([d.nombre for d in tienda])
-    return HttpResponse(output)
+    tiendas = get_list_or_404(Tienda.objects.order_by('nombre'))
+    context = {'lista_tiendas': tiendas }
+    return render(request, 'tiendas.html', context)
 
 def show_Tiendas(request,tienda_id):
     tienda = get_object_or_404(Tienda,pk=tienda_id)
-    output = f'Detalles de la articulo: {tienda.id}, {tienda.nombre},{tienda.direccion},{tienda.provincia}'
-    return HttpResponse(output)
+    articulos =  tienda.articulo_set.all()
+    context = { 'articulo': articulo, 'tienda' : tienda }
+    return render(request, 'tienda.html', context)
