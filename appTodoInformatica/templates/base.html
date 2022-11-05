@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="estilos.css">
+        <title>{% block titulo %}Todo Informatica{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <a href="index.html">
+                    <img id="logo_img" alt="logo_empresa" src="."> 
+                </a> 
+                <h2 id="logo_nombre">
+                    <a href="index.html">Todo Informatica</a>
+                </h2>
+            </div>
+            <nav id="control_cabeza">
+                <a class="control_a" href="appTodoInformatica/">Articulos</a>
+                <a class="control_a" href="appTodoInformatica/categorias">Categorias</a>
+                <a class="control_a" href="appTodoInformatica/tienda">Tiendas</a>
+            </nav>
+        </header>
+        <div id="content">
+            {% block contenido %}
+            
+            {% endblock %}
+        </div>
+        <footer>
+            <p>En caso de algun problema lease las condiciones de uso que pueden descargarse a continuacion: <a href="troll.html"></a>Link</p>
+            <h2>Todo los derechos reservados para Todo Informatica© S.L</h2>
+        </footer>
+    </body>
+</html>
