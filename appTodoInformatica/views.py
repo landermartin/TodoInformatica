@@ -5,7 +5,7 @@ from .models import Tienda,Categoria,Articulos,Provincia
 
 # Create your views here.
 def index_main(request):
-    return render(request,'index.hatml')
+    return render(request,'index.html')
 
 def index_categoria(request):
     categorias = get_list_or_404(Categoria.objects.order_by('nombre'))
@@ -18,9 +18,9 @@ def show_categoria(request, categoria_id):
     return render(request, 'categoria.html', context)
 
 def index_articulos(request):
-    categoria = get_object_or_404(Categoria, pk=categoria_id)
-    articulos =  categoria.articulo_set.all()
-    context = {'categoria': categoria, 'articulos' : articulos }
+    articulos = get_list_or_404(Articulos.objects.order_by('nombre'))
+
+    context = {'lista_categorias': articulos }
     return render(request, 'articulos.html', context)
 
 def show_articulo(request,articulo_id):
