@@ -17,10 +17,11 @@ def show_categoria(request, categoria_id):
     context = {'categoria': categoria }
     return render(request, 'categoria.html', context)
 
-def index_articulos(request):
-    articulos = get_list_or_404(Articulos.objects.order_by('nombre'))
-
-    context = {'lista_categorias': articulos }
+def index_articulos(request, tienda_id, categoria_id):
+    tienda = get_object_or_404(Tienda, pk=tienda_id)
+    categoria = get_object_or_404(Categoria, pk=categoria_id)
+    articulos = tienda.articulos_set.all()
+    context = {'tienda': tienda, 'categoria': categoria, 'articulos': articulos}
     return render(request, 'articulos.html', context)
 
 def show_articulo(request,articulo_id):
@@ -36,6 +37,5 @@ def index_tiendas(request):
 
 def show_tienda(request,tienda_id):
     tienda = get_object_or_404(Tienda,pk=tienda_id)
-    articulo =  tienda.articulo_set.all()
     context = { 'articulo': articulo, 'tienda' : tienda }
     return render(request, 'tienda.html', context)
