@@ -29,12 +29,12 @@ def show_articulo(request,articulo_id):
     context = { 'articulo': articulo, 'vendedor' : vendedor }
     return render(request, 'articulo.html', context)
 
-def index_Tiendas(request):
+def index_tiendas(request):
     tiendas = get_list_or_404(Tienda.objects.order_by('nombre'))
-    context = {'lista_tiendas': tiendas }
+    context = {'tiendas': tiendas }
     return render(request, 'tiendas.html', context)
 
-def show_Tienda(request,tienda_id):
+def show_tienda(request,tienda_id):
     tienda = get_object_or_404(Tienda,pk=tienda_id)
     articulo =  tienda.articulo_set.all()
     context = { 'articulo': articulo, 'tienda' : tienda }
