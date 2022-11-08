@@ -22,18 +22,21 @@ def index_articulos(request):
     context = {'articulos': articulos}
     return render(request, 'articulos.html', context)
 
-def show_articulo(request, tienda_id, categoria_id):
+def index_articulosTienda(request, tienda_id):
     tienda = get_object_or_404(Tienda, pk=tienda_id)
+    articulos = tienda.articulo_set.all()
+    context = {'tienda': tienda,'articulos': articulos}
+    return render(request, 'articulos.html', context)
+
+def index_articulosCategoria(request, categoria_id):
     categoria = get_object_or_404(Categoria, pk=categoria_id)
-    articulos = tienda.articulos_set.all()
-    categorias = categoria.articulos_set.all()
-    context = {'tienda': tienda, 'categoria': categorias, 'articulos': articulos}
+    articulos = categoria.articulo_set.all()
+    context = {'categoria': categoria,'articulos': articulos}
     return render(request, 'articulos.html', context)
 
 def show_articulo(request,articulo_id):
     articulo = get_object_or_404(Articulos, pk=articulo_id)
-    vendedor =  articulo.vendedor.all()
-    context = { 'articulo': articulo, 'vendedor' : vendedor }
+    context = { 'articulo': articulo }
     return render(request, 'articulo.html', context)
 
 def index_tiendas(request):
