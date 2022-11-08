@@ -14,7 +14,8 @@ def index_categoria(request):
 
 def show_categoria(request, categoria_id):
     categoria = get_object_or_404(Categoria, pk=categoria_id)
-    context = {'categoria': categoria }
+    articulos = get_list_or_404(Articulos.objects.order_by('nombre'))
+    context = {'categoria': categoria, 'articulos': articulos }
     return render(request, 'categoria.html', context)
 
 def index_articulos(request):

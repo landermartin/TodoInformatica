@@ -7,11 +7,13 @@
 <ul>
     <li>Nombre: {{categoria.nombre}}</li>
     <li>Articulos:<ul>
-        {% if vendedor %}
+        {% if articulos %}
             {% for a in articulos %}
-            <li>
-                <a href="{% url 'articulo' a.id%}">{{ a.nombre}}</a>
-            </li>
+                {% if a.categoria.id == categoria.id %}
+                <li>
+                    <a href="{% url 'articulo' a.id%}">{{ a.nombre}}</a>
+                </li>
+                {% endif %}
             {% endfor %}
         {% else %}
             <p>No hay tiendas disponibles</p>
