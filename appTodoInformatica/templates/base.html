@@ -8,17 +8,17 @@
     <body>
         <header>
             <div id="logo">
-                <a href="">
+                <a href="{% url 'index' %}">
                     <img id="logo_img" alt="logo_empresa" src="."> 
                 </a> 
                 <h2 id="logo_nombre">
-                    <a href="">Todo Informatica</a>
+                    <a href="{% url 'index' %}">Todo Informatica</a>
                 </h2>
             </div>
             <nav id="control_cabeza">
-                <a class="control_a" href="articulo">Articulos</a>
-                <a class="control_a" href="categoria">Categorias</a>
-                <a class="control_a" href="tienda">Tiendas</a>
+                <a class="control_a" href="{% url 'articulos' %}">Articulos</a>
+                <a class="control_a" href="{% url 'categorias' %}">Categorias</a>
+                <a class="control_a" href="{% url 'tiendas' %}">Tiendas</a>
             </nav>
         </header>
         <div id="content">
