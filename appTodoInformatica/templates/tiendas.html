@@ -9,6 +9,7 @@
     {% for t in tiendas %}
         <li>
             <a href="{% url 'tienda' t.id%}">{{ t.nombre}}</a>
+            
         </li>
     {% endfor %}
     </ul>
