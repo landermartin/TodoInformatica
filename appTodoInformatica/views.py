@@ -37,7 +37,7 @@ def index_articulosCategoria(request, categoria_id):
 
 def show_articulo(request,articulo_id):
     articulo = get_object_or_404(Articulos, pk=articulo_id)
-    context = { 'articulo': articulo }
+    context = { 'articulo': articulo, 'vendedor': articulo.vendedor.all}
     return render(request, 'articulo.html', context)
 
 def index_tiendas(request):
