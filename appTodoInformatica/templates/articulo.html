@@ -3,5 +3,29 @@
 {% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
 
 {% block contenido %}
-<p>Estas en articulo</p>
+{% if articulo %}
+<ul>
+    <li>Nombre: {{articulo.nombre}}</li>
+    <li>Marca {{articulo.marca}}</li>
+    <li>Precio: {{articulo.precio}}€</li>
+    <li>Stock: {{articulo.stock}}</li>
+    <li>Categoria: {{articulo.categoria}}</li>
+    <li>Tiendas:<ul>
+        {% if vendedor %}
+            {% for t in vendedor %}
+            <li>
+                <a href="{% url 'tienda' t.id%}">{{ t.nombre}}</a>
+            </li>
+            {% endfor %}
+        {% else %}
+            <p>No hay tiendas disponibles</p>
+        {% endif %}
+    </ul></li>
+
+</ul>
+{% else %}
+    <p>Error al cargar el archivo</p>
+{% endif %}
+
+
 {% endblock %}
