@@ -3,5 +3,31 @@
 {% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
 
 {% block contenido %}
-<p>Estas en tienda</p>
+{% if tienda %}
+<ul>
+    <li>Nombre: {{tienda.nombre}}</li>
+    <li>Direccion: {{tienda.direccion}}</li>
+    <li>Provincia: {{tienda.Provincia.nombre}}</li>
+    <li>Articulos:
+        <ul>
+        {% if articulos %}
+            {% for a in articulos %}
+                {% for b in a.vendedor.all %}
+                {% if b.id == tienda.id %}
+                <li>
+                    <a href="{% url 'articulo' a.id %}">{{ a.nombre}}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            {% endfor %}
+        {% else %}
+            <p>No hay articulos disponibles</p>
+        {% endif %}
+    </ul>
+    </li>
+
+</ul>
+{% else %}
+    <p>Error al cargar el archivo</p>
+{% endif %}
 {% endblock %}
