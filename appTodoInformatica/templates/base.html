@@ -9,7 +9,8 @@
         <header>
             <div id="logo">
                 <a href="{% url 'index' %}">
-                    <img id="logo_img" alt="logo_empresa" src="."> 
+                    {% load static %}
+                    <img id="logo_img" alt="logo_empresa" src="{% static 'logo.png' %}"> 
                 </a> 
                 <h2 id="logo_nombre">
                     <a href="{% url 'index' %}">Todo Informatica</a>
