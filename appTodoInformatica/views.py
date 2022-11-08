@@ -37,5 +37,5 @@ def index_tiendas(request):
 
 def show_tienda(request,tienda_id):
     tienda = get_object_or_404(Tienda,pk=tienda_id)
-    context = { 'articulo': articulo, 'tienda' : tienda }
+    context = {'tienda' : tienda }
     return render(request, 'tienda.html', context)
