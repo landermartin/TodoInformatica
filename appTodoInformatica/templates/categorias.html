@@ -3,5 +3,17 @@
 {% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
 
 {% block contenido %}
-<p>Estas en categorias</p>
+<h2>Listado de Categorias</h2>
+{% if lista_categorias %}
+    <ul>
+    {% for c in lista_categorias %}
+        <li>
+            <a href="{% url 'categoria' c.id%}">{{ c.nombre}}</a>
+            
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+<p>No hay categorias creadas.</p>
+{% endif %}
 {% endblock %}
