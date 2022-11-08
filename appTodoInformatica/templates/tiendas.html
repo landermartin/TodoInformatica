@@ -3,5 +3,16 @@
 {% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
 
 {% block contenido %}
-<p>Estas en tiendas</p>
+<h2>Listado de tiendas</h2>
+{% if tiendas %}
+    <ul>
+    {% for t in tiendas %}
+        <li>
+            <a href="{% url 'tienda' t.id%}">{{ t.nombre}}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+<p>No hay tiendas creadas.</p>
+{% endif %}
 {% endblock %}
