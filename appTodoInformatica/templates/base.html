@@ -1,25 +1,22 @@
+{% load tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         {% load static %}
+        {% tailwind_css %}
         <link rel="stylesheet" href="{% static 'estilos.css' %}">
         <title>{% block titulo %}Todo Informatica{% endblock %}</title>
     </head>
-    <body>
-        <header>
-            <div id="logo">
-                <a href="{% url 'index' %}">
-                    {% load static %}
-                    <img id="logo_img" alt="logo_empresa" src="{% static 'logo.png' %}"> 
-                </a> 
-                <h2 id="logo_nombre">
-                    <a href="{% url 'index' %}">Todo Informatica</a>
-                </h2>
-            </div>
-            <nav id="control_cabeza">
-                <a class="control_a" href="{% url 'articulos' %}">Articulos</a>
-                <a class="control_a" href="{% url 'categorias' %}">Categorias</a>
-                <a class="control_a" href="{% url 'tiendas' %}">Tiendas</a>
+    <body class="">
+        <header class="flex bg-green-300 items-center justify-between px-8 py-2">
+            <a href="{% url 'index' %}">
+                {% load static %}
+                <img class=" w-20" alt="logo_empresa" src="{% static 'logo.png' %}"> 
+            </a>
+            <nav>
+                <a class="p-2 bg-red-500 hover:bg-red-700 hover:text-white duration-300 hover:duration-300 rounded-md" href="{% url 'articulos' %}">Articulos</a>
+                <a class="p-2 bg-red-500 hover:bg-red-700 hover:text-white duration-300 hover:duration-300 rounded-md" href="{% url 'categorias' %}">Categorias</a>
+                <a class="p-2 bg-red-500 hover:bg-red-700 hover:text-white duration-300 hover:duration-300 rounded-md" href="{% url 'tiendas' %}">Tiendas</a>
             </nav>
         </header>
         <div id="content">
