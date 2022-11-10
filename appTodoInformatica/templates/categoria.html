@@ -4,23 +4,27 @@
 
 {% block contenido %}
 {% if categoria %}
-<ul>
-    <li>Nombre: {{categoria.nombre}}</li>
-    <li>Articulos:<ul>
+<div class="px-56 mb-44">
+    <p class="my-2 text-xl">Categoría <span class="text-4xl font-bold mx-2">{{categoria.nombre}}</span></p>
+    <p class="text-gray-500 italic">Estos artículos pertenecen a la categoría seleccionada<p>
         {% if articulos %}
+            <div class="flex flex-wrap justify-start items-center">
             {% for a in articulos %}
                 {% if a.categoria.id == categoria.id %}
-                <li>
-                    <a href="{% url 'articulo' a.id%}">{{ a.nombre}}</a>
-                </li>
+                <div class="my-4 mx-9 flex flex-col items-center hover:bg-blue-600 hover:bg-opacity-95 hover:text-white duration-150 hover:duration-150 rounded-md text-center">
+                    <a href="{% url 'articulo' a.id%}">
+                    <img class="w-48" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-2021-hero-silver-wifi-select_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&.v=1631150851000" />
+                    <p>{{ a.nombre}}</p>
+                </div>
                 {% endif %}
             {% endfor %}
+            </div>
         {% else %}
             <p>No hay tiendas disponibles</p>
         {% endif %}
     </ul></li>
 
-</ul>
+</div>
 {% else %}
     <p>Error al cargar el archivo</p>
 {% endif %}

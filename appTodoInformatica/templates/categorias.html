@@ -3,17 +3,16 @@
 {% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
 
 {% block contenido %}
-<h2>Listado de Categorias</h2>
-{% if lista_categorias %}
-    <ul>
-    {% for c in lista_categorias %}
-        <li>
-            <a href="{% url 'categoria' c.id%}">{{ c.nombre}}</a>
-            
-        </li>
-    {% endfor %}
-    </ul>
-{% else %}
-<p>No hay categorias creadas.</p>
-{% endif %}
+<div class="px-36 py-20 mb-72">
+    <p class="font-bold text-4xl">Listado de Categorias</p>
+    {% if lista_categorias %}
+        <div class="flex flex-col py-6">
+            {% for c in lista_categorias %}
+                <a class="hover:transform hover:scale-150 hover:font-bold my-1 py-3 duration-300 w-fit pr-14" href="{% url 'categoria' c.id%}">{{ c.nombre}}</a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No hay categorias creadas.</p>
+    {% endif %}
+</div>
 {% endblock %}
