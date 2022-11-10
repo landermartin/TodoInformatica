@@ -50,3 +50,6 @@ def show_tienda(request,tienda_id):
     articulos = get_list_or_404(Articulos.objects.order_by('nombre'))
     context = {'tienda' : tienda, 'articulos': articulos}
     return render(request, 'tienda.html', context)
+
+def troll(request):
+    return render(request, 'troll.html')

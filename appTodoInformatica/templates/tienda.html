@@ -4,29 +4,35 @@
 
 {% block contenido %}
 {% if tienda %}
-<ul>
-    <li>Nombre: {{tienda.nombre}}</li>
-    <li>Direccion: {{tienda.direccion}}</li>
-    <li>Provincia: {{tienda.provincia.nombre}}</li>
-    <li>Articulos:
-        <ul>
+<div class="px-9 mt-6 mb-72 flex flex-col justify-around">
+    <div class="w-full flex justify-around text-xl">
+        <div class="md:w-1/5">
+            <p class="text-6xl font-bold">{{tienda.nombre}}</p>
+            <p>Direccion: {{tienda.direccion}}</p>
+            <p>Provincia: {{tienda.provincia.nombre}}</p>
+        </div>
+        <div class="flex items-center">
+            <img class="w-36" src="https://play-lh.googleusercontent.com/Nawfhx0Hio0qM_2geT4r6ejz4UP9h_VMPCg1xsmci8tOYLHfAFp9dVapEW10nw6H0lc" />
+        </div>
+    </div>
+    <div class="flex flex-wrap justify-start items-center my-4">
         {% if articulos %}
             {% for a in articulos %}
                 {% for b in a.vendedor.all %}
                 {% if b.id == tienda.id %}
-                <li>
-                    <a href="{% url 'articulo' a.id %}">{{ a.nombre}}</a>
-                </li>
+                <div class="my-4 mx-9 flex flex-col items-center hover:bg-blue-600 hover:bg-opacity-95 hover:text-white duration-200 rounded-md text-center">
+                    <a href="{% url 'articulo' a.id%}">
+                    <img class="w-48" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-2021-hero-silver-wifi-select_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&.v=1631150851000" />
+                    <p>{{ a.nombre}}</p>
+                </div>
                 {% endif %}
                 {% endfor %}
             {% endfor %}
         {% else %}
-            <p>No hay articulos disponibles</p>
+            <p class="text-red-800 italic">No hay articulos disponibles</p>
         {% endif %}
-    </ul>
-    </li>
-
-</ul>
+    </div>
+</div>
 {% else %}
     <p>Error al cargar el archivo</p>
 {% endif %}
