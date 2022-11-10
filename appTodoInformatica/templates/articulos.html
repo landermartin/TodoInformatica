@@ -3,17 +3,21 @@
 {% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
 
 {% block contenido %}
-<h2>Listado de Articulos</h2>
-{% if articulos %}
-    <ul>
-    {% for a in articulos %}
-        <li>
-            <a href="{% url 'articulo' a.id%}">{{ a.nombre}}</a>
-            
-        </li>
-    {% endfor %}
-    </ul>
-{% else %}
-<p>No hay tiendas creadas.</p>
-{% endif %}
+<div class="px-9 mb-72">
+    <h2 class="text-5xl my-9 text-center">Listado de artículos</h2>
+    {% if articulos %}
+        <div class="flex flex-wrap justify-start items-center">
+        {% for a in articulos %}
+            <div class="my-4 mx-9 flex flex-col items-center hover:bg-blue-600 hover:bg-opacity-95 hover:text-white duration-150 hover:duration-150 rounded-md text-center">
+                <a href="{% url 'articulo' a.id%}">
+                <img class="w-48" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-2021-hero-silver-wifi-select_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&.v=1631150851000" />
+                <p>{{ a.nombre}}</p>
+            </a> 
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+    <p>No hay tiendas creadas.</p>
+    {% endif %}
+</div>
 {% endblock %}
