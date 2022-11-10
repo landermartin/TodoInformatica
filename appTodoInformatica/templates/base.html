@@ -9,7 +9,7 @@
         <link rel="icon" href="{% static 'logo.ico' %}">
     </head>
     <body class="">
-        <header class="flex items-center justify-between px-6 py-2 sticky top-0 bg-white z-50">
+        <header class="flex items-center justify-between px-6 py-2 sticky top-0 bg-white z-10">
             <a href="{% url 'index' %}">
                 {% load static %}
                 <img class=" w-20" alt="logo_empresa" src="{% static 'logo.png' %}"> 
@@ -24,7 +24,7 @@
             {% block contenido %}
             {% endblock %}
         </div>
-        <footer class="bg-gray-600 py-6 px-8 flex flex-col space-y-2 fixed bottom-0 w-screen">
+        <footer class="bg-gray-600 py-6 px-8 flex flex-col space-y-2 fixed bottom-0 w-screen z-10">
             <p class="break-normal text-gray-100">En caso de algun problema lease las condiciones de uso que pueden descargarse en el siguiente <a href="{% url 'troll' %}" class="text-gray-100 hover:text-blue-300 duration-300 hover:duration-300">link</a></p>
             <h2 class="break-normal text-gray-100">Todo los derechos reservados para Todo Informatica© S.L</h2>
         </footer>
