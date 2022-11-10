@@ -11,5 +11,6 @@ urlpatterns = [
  path('categoria/<int:categoria_id>', views.show_categoria, name='categoria'),
  path('articuloTienda/', views.index_articulosTienda, name='articulosTienda'),
  path('articuloCategoria/', views.index_articulosCategoria, name='articulosCategoria'),
+ path('troll/', views.troll, name='troll'),
  path("__reload__/", include("django_browser_reload.urls")),
 ]
