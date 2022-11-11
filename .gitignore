@@ -39,7 +39,6 @@ __pycache__/
 env/
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 lib/
@@ -84,7 +83,6 @@ target/
 *.log
 *.pot
 *.pyc
-*/__pycache__/
 local_settings.py
 
 .env
