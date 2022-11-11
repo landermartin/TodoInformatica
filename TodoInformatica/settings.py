@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-04gh-g*q#*^t2%f^(j2i&efmc%0g$6!3v-3h06!_=tppr7!099'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -137,7 +137,7 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-
+"""
 # For production
 SECRET_KEY = "cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag"
 DEBUG = False
@@ -147,3 +147,4 @@ SESSION_COOKIE_SECURE = True
 SECURE_HSTS_SECONDS = 518400
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+"""
