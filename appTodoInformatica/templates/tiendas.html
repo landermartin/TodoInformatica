@@ -10,9 +10,11 @@
         {% for t in tiendas %}
             <div class="my-4 mx-9 p-7 flex flex-col items-center hover:bg-red-600 hover:bg-opacity-95 hover:text-white duration-200 rounded-md text-center">
                 <a href="{% url 'tienda' t.id%}">
-                <img class=" w-28" src="https://play-lh.googleusercontent.com/Nawfhx0Hio0qM_2geT4r6ejz4UP9h_VMPCg1xsmci8tOYLHfAFp9dVapEW10nw6H0lc" />
+                    {% load static %}
+                    <img class=" w-28" alt="{{ entidad.imagen.name }}" src="{% static entidad.imagen.name %}" />
                 <p>{{t.nombre}}</p>
             </div>
+            
         {% endfor %}
         </div>
     {% else %}
