@@ -13,6 +13,7 @@ class Tienda(models.Model):
     nombre = models.CharField(max_length=60) 
     direccion=models.CharField(max_length=70) 
     provincia=models.ForeignKey(Provincia, on_delete=models.CASCADE)
+    logo=models.ImageField(upload_to='img',blank=True,null=True,verbose_name='Image')
     def __str__(self):
         return self.nombre
 
@@ -32,6 +33,6 @@ class Articulos(models.Model):
     stock = models.BooleanField()
     categoria=models.ForeignKey(Categoria, on_delete=models.CASCADE)
     vendedor=models.ManyToManyField(Tienda)
-
+    logo=models.ImageField(upload_to='img',blank=True,null=True,verbose_name='Image')
     def __str__(self):
         return self.nombre
