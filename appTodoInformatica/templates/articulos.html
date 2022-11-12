@@ -12,7 +12,7 @@
                 <a href="{% url 'articulo' a.id%}">
 
                 {% load static %}
-                <img class="w-48" alt="{{ articulo.imagen.name }}" src="{% static articulo.imagen.name %}" />
+                <img class="w-48" alt="Error al cargar imagen" src="{% static a.logo.name %}" />
                 <p>{{ a.nombre}}</p>
                 
             </div>

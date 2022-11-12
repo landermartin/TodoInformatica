@@ -14,7 +14,7 @@
                 <div class="my-4 mx-9 flex flex-col items-center hover:bg-blue-600 hover:bg-opacity-95 hover:text-white duration-150 hover:duration-150 rounded-md text-center">
                     <a href="{% url 'articulo' a.id%}">
                         {% load static %}
-                        <img class="w-48" alt="{{ categoria.imagen.name }}" src="{% static categoria.imagen.name %}" />
+                        <img class="w-48" alt="Error al cargar imagen" src="{% static a.logo.name %}" />
                     <p>{{ a.nombre}}</p>
                 </div>
                 
