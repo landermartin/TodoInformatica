@@ -8,14 +8,13 @@
     {% if articulos %}
         <div class="flex flex-wrap justify-start items-center">
         {% for a in articulos %}
-            <div class="my-4 mx-9 flex flex-col items-center hover:bg-blue-600 hover:bg-opacity-95 hover:text-white duration-200 rounded-md text-center">
-                <a href="{% url 'articulo' a.id%}">
+            <a href="{% url 'articulo' a.id%}" class="my-4 mx-9 px-6 flex flex-col items-center hover:bg-blue-600 hover:bg-opacity-95 hover:text-white duration-200 rounded-md text-center min-w-[200px]">
 
                 {% load static %}
-                <img class="w-48" alt="Error al cargar imagen" src="{% static a.logo.name %}" />
+                <img class="h-24 my-9" alt="Error al cargar imagen" src="{% static a.logo.name %}" />
                 <p>{{ a.nombre}}</p>
                 
-            </div>
+            </a>
         {% endfor %}
         </div>
     {% else %}

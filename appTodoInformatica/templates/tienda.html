@@ -13,21 +13,21 @@
         </div>
         <div class="flex items-center">
             {% load static %}
-            <img class="w-36" alt ="Error al cargar imagen" src="{% static tienda.logo.name %}" />
+            <img class="w-24 md:w-36" alt ="Error al cargar imagen" src="{% static tienda.logo.name %}" />
         </div>
     </div>
-    <div class="flex flex-wrap justify-start items-center my-4">
+    <div class="flex flex-wrap justify-start items-center my-4 md:mx-16">
         {% if articulos %}
             {% for a in articulos %}
                 {% for b in a.vendedor.all %}
                 {% if b.id == tienda.id %}
-                <div class="my-4 mx-9 flex flex-col items-center hover:bg-blue-600 hover:bg-opacity-95 hover:text-white duration-200 rounded-md text-center">
-                    <a href="{% url 'articulo' a.id%}">
+                <a href="{% url 'articulo' a.id%}" class="my-4 mx-9 px-6 flex flex-col items-center hover:bg-blue-600 hover:bg-opacity-95 hover:text-white duration-200 rounded-md text-center min-w-[200px]">
+    
                     {% load static %}
-                    <img class="w-48" src="{% static a.logo.name %}" />
+                    <img class="h-24 my-9" alt="Error al cargar imagen" src="{% static a.logo.name %}" />
                     <p>{{ a.nombre}}</p>
                     
-                </div>
+                </a>
                 {% endif %}
                 {% endfor %}
             {% endfor %}

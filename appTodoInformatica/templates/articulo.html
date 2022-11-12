@@ -6,7 +6,7 @@
 {% if articulo %}
 <div class="px-9 mt-6 mb-72 flex justify-center">
     <div class=" w-full md:w-3/5 flex text-xl">
-        <div class="flex-grow space-y-1 py-1 my-24">
+        <div class="items-center flex-grow space-y-1 py-1 my-24">
             <p class="font-bold text-4xl">{{articulo.nombre}}</p>
             <p>Marca <span class="font-bold">{{articulo.marca}}</span></p>
             <p>Precio: {{articulo.precio}}€</p>
@@ -29,9 +29,9 @@
                     <p class="text-red-800 italic">No hay tiendas disponibles</p>
                 {% endif %}
         </div>
-        <div class="flex-grow">
+        <div class="flex flex-grow justify-center items-center">
             {% load static %}
-            <img class="w-96 hover:rotate-3 duration-500" alt="Error al cargar imagen" src="{% static articulo.logo.name %}" />            
+            <img class="h-28 md:h-64 hover:rotate-3 duration-500" alt="Error al cargar imagen" src="{% static articulo.logo.name %}" />            
         </div>
     </div>
     
