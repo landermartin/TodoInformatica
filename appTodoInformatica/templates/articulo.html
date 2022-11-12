@@ -30,9 +30,11 @@
                 {% endif %}
         </div>
         <div class="flex-grow">
-            <img class="w-96 hover:rotate-3 duration-500" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-2021-hero-silver-wifi-select_FMT_WHH?wid=940&hei=1112&fmt=png-alpha&.v=1631150851000" />
+            {% load static %}
+            <img class="w-96 hover:rotate-3 duration-500" alt="{{ articulo.imagen.name }}" src="{% static articulo.imagen.name %}" />            
         </div>
     </div>
+    
 </div>
 {% else %}
     <p>Error al cargar el archivo</p>
