@@ -8,7 +8,7 @@
     {% if tiendas %}
         <div class="flex flex-wrap justify-start items-center my-4">
         {% for t in tiendas %}
-            <a href="{% url 'tienda' t.id%}" class="mx-9 p-7 flex flex-col items-center hover:bg-red-600 hover:bg-opacity-95 hover:text-white duration-200 rounded-md text-center min-h-[200px] min-w-[200px]">
+            <a href="{% url 'tienda' t.id%}" class="mx-9 p-7 flex flex-col items-center hover:shadow-xl hover:shadow-gray-300 duration-200 rounded-xl text-center min-h-[200px] min-w-[200px]">
                     {% load static %}
                     <img class="h-24 my-2" alt="Error al cargar imagen" src="{% static t.logo.name %}" />
                 <p>{{t.nombre}}</p>
