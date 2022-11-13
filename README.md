@@ -5,6 +5,7 @@ de las distintas tiendas físicas en las que se vende (MediaMarkt, PcBox, CanalP
 También podrán ver los detalles de cada categoría y de cada tienda, incluida la lista de artículos en cada caso.
 
 Grupo: IW-BI-14
-Admin:
-  User: EBAY
+
+Acceso administrador<br>
+  User: EBAY<br>
   Clave: EBAY
