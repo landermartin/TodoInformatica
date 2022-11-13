@@ -4,4 +4,7 @@ Los visitantes podrán ver los detalles de cada artículo y encontrarlos en func
 de las distintas tiendas físicas en las que se vende (MediaMarkt, PcBox, CanalPC, etc.). 
 También podrán ver los detalles de cada categoría y de cada tienda, incluida la lista de artículos en cada caso.
 
-Grupo:IW-BI-14
+Grupo: IW-BI-14
+Admin:
+  User: EBAY
+  Clave: EBAY
