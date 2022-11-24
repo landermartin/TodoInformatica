@@ -3,7 +3,22 @@
 {% block titulo %}Listado de departamentos{% endblock %}
 
 {% block contenido %}
-<div class="w-screen flex justify-center py-24 px-11">
+<div class="w-screen flex flex-col justify-center py-24 px-11">
   <p class="text-6xl">Aprovecha la <span class="text-blue-700 font-bold	text-7xl">mejor oferta</span> disponile en la tienda</p>
+  <div>
+    <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#contenedorCompras").click(function(){
+          $(this).append('<div class="bg-red-400"><p class="text-blue-700" id="texto">Ordenador portatil</p></div>');
+        });
+      });
+    </script>
+    <div id="contenedorCompras" class="max-h-24 h-6 w-4 overflow-y-scroll bg-red-500">
+      <div class="bg-red-400">
+          <p class="text-blue-700" id="texto">Ordenador portatil</p>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}
