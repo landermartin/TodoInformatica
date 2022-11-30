@@ -3,7 +3,42 @@
 {% block titulo %}Listado de departamentos{% endblock %}
 
 {% block contenido %}
-<div class="w-screen flex justify-center py-24 px-11">
+<div class="w-screen flex flex-col justify-center py-24 px-11">
   <p class="text-6xl">Aprovecha la <span class="text-blue-700 font-bold	text-7xl">mejor oferta</span> disponile en la tienda</p>
+  <div class="mt-16 w-full bg-blue-500 p-2 rounded-xl flex h-60 px-11">
+    <div class="flex flex-col justify-around">
+      <p class="text-5xl text-white">Dados de la suerte</p>
+      <p class="text-gray-100">Pulsa en los dados para ver si te toca un código promocional!</p>
+      <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.js"></script>
+      <script>
+        function generarCodigo(max) {
+          let r='';
+          for (let i=0;i<max/13;i++)
+            r+=(Math.random()+1).toString(16).substring(2);
+          return r.substring(0,max).toUpperCase();
+        }
+
+        $(document).ready(function(){
+            $("#imagenDados").click(function(){
+              if (Math.floor(Math.random() * 100) <= 20) {
+                const cod = generarCodigo(6);
+                $("#codigoPromocion").text("Enhorabuena! Tu código es #" + cod); // establecer mensaje
+                $("#codigoPromocion").show(); // mostrar mensaje
+                $("#imagenDados").hide(); // quitar los dados
+              } else {
+                $("#codigoPromocion").text("Vaya! No ha habido suerte :("); // establecer mensaje
+                $("#codigoPromocion").show(); // mostrar mensaje
+                $("#imagenDados").hide(); // quitar los dados
+              }
+            });
+        });
+      </script>
+    </div>
+    <div class="flex items-center justify-center flex-grow mx-3">
+      {% load static %}
+      <img id="imagenDados" class="w-64" alt="Error al cargar imagen" src="{% static 'img/dados.png' %}" />
+      <p id="codigoPromocion" class="hidden text-white text-3xl">aaaa</p>
+    </div>
+  </div>
 </div>
 {% endblock %}
