@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-09 17:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: appTodoInformatica/templates/articulo.html:5
+#: appTodoInformatica/templates/articulos.html:5
+#: appTodoInformatica/templates/categoria.html:5
+#: appTodoInformatica/templates/categorias.html:5
+#: appTodoInformatica/templates/tienda.html:5
+#: appTodoInformatica/templates/tiendas.html:5
+msgid "Las Caracteristicas de la Tienda"
+msgstr "Las Caracteristicas de la Tienda"
+
+#: appTodoInformatica/templates/articulo.html:13
+msgid "Marca:"
+msgstr "Marca:"
+
+#: appTodoInformatica/templates/articulo.html:14
+msgid "Precio:"
+msgstr "Precio:"
+
+#: appTodoInformatica/templates/articulo.html:16
+msgid "Disponible"
+msgstr "Disponible"
+
+#: appTodoInformatica/templates/articulo.html:18
+msgid "Fuera de stock"
+msgstr "Fuera de stock"
+
+#: appTodoInformatica/templates/articulo.html:20
+msgid "Categoria:"
+msgstr "Categoria:"
+
+#: appTodoInformatica/templates/articulo.html:21
+msgid "Tiendas:"
+msgstr "Tiendas:"
+
+#: appTodoInformatica/templates/articulo.html:31
+#: appTodoInformatica/templates/categoria.html:27
+msgid "No hay tiendas disponibles"
+msgstr "No hay tiendas disponibles"
+
+#: appTodoInformatica/templates/articulo.html:42
+#: appTodoInformatica/templates/categoria.html:32
+#: appTodoInformatica/templates/tienda.html:42
+msgid "Error al cargar el archivo"
+msgstr "Error al cargar el archivo"
+
+#: appTodoInformatica/templates/articulos.html:9
+msgid "Listado de artículos"
+msgstr "Listado de artículos"
+
+#: appTodoInformatica/templates/articulos.html:23
+#: appTodoInformatica/templates/tiendas.html:22
+msgid "No hay tiendas creadas"
+msgstr "No hay tiendas creadas"
+
+#: appTodoInformatica/templates/base.html:11
+msgid "Todo Informatica"
+msgstr "Todo Informatica"
+
+#: appTodoInformatica/templates/base.html:21
+msgid "Articulos"
+msgstr "Articulos"
+
+#: appTodoInformatica/templates/base.html:22
+msgid "Categorias"
+msgstr "Categoria:"
+
+#: appTodoInformatica/templates/base.html:23
+msgid "Tiendas"
+msgstr "Tiendas:"
+
+#: appTodoInformatica/templates/base.html:31
+msgid ""
+"En caso de algun problema lease las condiciones de uso que pueden "
+"descargarse en el siguiente"
+msgstr ""
+"En caso de algun problema lease las condiciones de uso que pueden "
+"descargarse en el siguiente"
+
+#: appTodoInformatica/templates/base.html:31
+msgid "link"
+msgstr "link"
+
+#: appTodoInformatica/templates/base.html:32
+msgid "Todo los derechos reservados para Todo Informatica© S.L"
+msgstr "Todo los derechos reservados para Todo Informatica© S.L"
+
+#: appTodoInformatica/templates/categoria.html:10
+msgid "Categoría"
+msgstr "Categoria:"
+
+#: appTodoInformatica/templates/categoria.html:11
+msgid "Estos artículos pertenecen a la categoría seleccionada"
+msgstr "Estos artículos pertenecen a la categoría seleccionada"
+
+#: appTodoInformatica/templates/categorias.html:9
+msgid "Listado de Categorias"
+msgstr "Listado de artículos"
+
+#: appTodoInformatica/templates/categorias.html:17
+msgid "No hay categorias creadas"
+msgstr "No hay tiendas creadas"
+
+#: appTodoInformatica/templates/index.html:9
+msgid "Aprovecha la"
+msgstr "Aprovecha la"
+
+#: appTodoInformatica/templates/index.html:9
+msgid "mejor oferta"
+msgstr "mejor oferta"
+
+#: appTodoInformatica/templates/index.html:9
+msgid "disponile en la tienda"
+msgstr "disponile en la tienda"
+
+#: appTodoInformatica/templates/index.html:12
+msgid "Dados de la suerte"
+msgstr "Dados de la suerte"
+
+#: appTodoInformatica/templates/index.html:13
+msgid "Pulsa en los dados para ver si te toca un código promocional!"
+msgstr "Pulsa en los dados para ver si te toca un código promocional!"
+
+#: appTodoInformatica/templates/tienda.html:13
+msgid "Direccion:"
+msgstr "Direccion:"
+
+#: appTodoInformatica/templates/tienda.html:14
+msgid "Provincia:"
+msgstr "Provincia:"
+
+#: appTodoInformatica/templates/tienda.html:37
+msgid "No hay articulos disponibles"
+msgstr "No hay tiendas disponibles"
+
+#: appTodoInformatica/templates/tiendas.html:9
+msgid "Listado de tiendas"
+msgstr "Listado de artículos"

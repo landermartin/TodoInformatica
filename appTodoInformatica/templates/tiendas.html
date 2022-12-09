@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
-{% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
+{% load i18n %}
+
+{% block titulo %}{% trans 'Las Caracteristicas de la Tienda' %}{% endblock %}
 
 {% block contenido %}
 <div class="px-36 py-20 mb-72">
-    <p class="font-bold text-4xl">Listado de tiendas</p>
+    <p class="font-bold text-4xl">{% trans 'Listado de tiendas' %}</p>
     {% if tiendas %}
         <div class="flex flex-wrap justify-start items-center my-4">
         {% for t in tiendas %}
@@ -17,7 +19,7 @@
         {% endfor %}
         </div>
     {% else %}
-    <p class="text-red-800 italic">No hay tiendas creadas.</p>
+    <p class="text-red-800 italic">{% trans 'No hay tiendas creadas' %}</p>
     {% endif %}
 </div>
 {% endblock %}

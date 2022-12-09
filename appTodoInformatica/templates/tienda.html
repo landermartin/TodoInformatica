@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
-{% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
+{% load i18n %}
+
+{% block titulo %}{% trans 'Las Caracteristicas de la Tienda' %}{% endblock %}
 
 {% block contenido %}
 {% if tienda %}
@@ -8,8 +10,8 @@
     <div class="w-full flex justify-around text-xl">
         <div class="md:w-1/5">
             <p class="text-6xl font-bold">{{tienda.nombre}}</p>
-            <p>Direccion: {{tienda.direccion}}</p>
-            <p>Provincia: {{tienda.provincia.nombre}}</p>
+            <p>{% trans 'Direccion:' %} {{tienda.direccion}}</p>
+            <p>{% trans 'Provincia:' %} {{tienda.provincia.nombre}}</p>
         </div>
         <div class="flex items-center">
             {% load static %}
@@ -32,11 +34,11 @@
                 {% endfor %}
             {% endfor %}
         {% else %}
-            <p class="text-red-800 italic">No hay articulos disponibles</p>
+            <p class="text-red-800 italic">{% trans 'No hay articulos disponibles' %}</p>
         {% endif %}
     </div>
 </div>
 {% else %}
-    <p>Error al cargar el archivo</p>
+    <p>{% trans 'Error al cargar el archivo' %}</p>
 {% endif %}
 {% endblock %}
