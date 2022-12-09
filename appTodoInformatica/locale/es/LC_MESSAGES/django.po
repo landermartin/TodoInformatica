@@ -81,11 +81,11 @@ msgstr "Articulos"
 
 #: appTodoInformatica/templates/base.html:22
 msgid "Categorias"
-msgstr "Categoria:"
+msgstr "Categoria"
 
 #: appTodoInformatica/templates/base.html:23
 msgid "Tiendas"
-msgstr "Tiendas:"
+msgstr "Tiendas"
 
 #: appTodoInformatica/templates/base.html:31
 msgid ""
@@ -105,7 +105,7 @@ msgstr "Todo los derechos reservados para Todo Informatica© S.L"
 
 #: appTodoInformatica/templates/categoria.html:10
 msgid "Categoría"
-msgstr "Categoria:"
+msgstr "Categoria"
 
 #: appTodoInformatica/templates/categoria.html:11
 msgid "Estos artículos pertenecen a la categoría seleccionada"
