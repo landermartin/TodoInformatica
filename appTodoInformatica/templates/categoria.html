@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 
-{% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
+{% load i18n %}
+
+{% block titulo %}{% trans 'Las Caracteristicas de la Tienda' %}{% endblock %}
 
 {% block contenido %}
 {% if categoria %}
 <div class="px-56 mb-44">
-    <p class="my-2 text-xl">Categoría <span class="text-4xl font-bold mx-2">{{categoria.nombre}}</span></p>
-    <p class="text-gray-500 italic">Estos artículos pertenecen a la categoría seleccionada<p>
+    <p class="my-2 text-xl">{% trans 'Categoría' %} <span class="text-4xl font-bold mx-2">{{categoria.nombre}}</span></p>
+    <p class="text-gray-500 italic">{% trans 'Estos artículos pertenecen a la categoría seleccionada' %}<p>
         {% if articulos %}
             <div class="flex flex-wrap justify-start items-center">
             {% for a in articulos %}
@@ -22,11 +24,11 @@
             {% endfor %}
             </div>
         {% else %}
-            <p>No hay tiendas disponibles</p>
+            <p>{% trans 'No hay tiendas disponibles' %}</p>
         {% endif %}
 
 </div>
 {% else %}
-    <p>Error al cargar el archivo</p>
+    <p>{% trans 'Error al cargar el archivo' %}</p>
 {% endif %}
 {% endblock %}

@@ -1,11 +1,14 @@
 {% load tailwind_tags %}
+
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         {% load static %}
         {% tailwind_css %}
         <link rel="stylesheet" href="{% static 'estilos.css' %}">
-        <title>{% block titulo %}Todo Informatica{% endblock %}</title>
+        <title>{% block titulo %}{% trans 'Todo Informatica' %}{% endblock %}</title>
         <link rel="icon" href="{% static 'logo.ico' %}">
     </head>
     <body class="">
@@ -15,9 +18,9 @@
                 <img class=" w-20" alt="logo_empresa" src="{% static 'logo.png' %}"> 
             </a>
             <nav>
-                <a class="p-2 m-2 hover:bg-blue-700 hover:text-white duration-300 hover:duration-300 rounded-md" href="{% url 'articulos' %}">Articulos</a>
-                <a class="p-2 m-2 hover:bg-blue-700 hover:text-white duration-300 hover:duration-300 rounded-md" href="{% url 'categorias' %}">Categorias</a>
-                <a class="p-2 m-2 hover:bg-blue-700 hover:text-white duration-300 hover:duration-300 rounded-md" href="{% url 'tiendas' %}">Tiendas</a>
+                <a class="p-2 m-2 hover:bg-blue-700 hover:text-white duration-300 hover:duration-300 rounded-md" href="{% url 'articulos' %}">{% trans 'Articulos' %}</a>
+                <a class="p-2 m-2 hover:bg-blue-700 hover:text-white duration-300 hover:duration-300 rounded-md" href="{% url 'categorias' %}">{% trans 'Categorias' %}</a>
+                <a class="p-2 m-2 hover:bg-blue-700 hover:text-white duration-300 hover:duration-300 rounded-md" href="{% url 'tiendas' %}">{% trans 'Tiendas' %}</a>
             </nav>
         </header>
         <div>
@@ -25,8 +28,8 @@
             {% endblock %}
         </div>
         <footer class="bg-gray-600 py-6 px-8 flex flex-col space-y-2 fixed bottom-0 w-screen z-10">
-            <p class="break-normal text-gray-100">En caso de algun problema lease las condiciones de uso que pueden descargarse en el siguiente <a href="{% url 'troll' %}" class="text-blue-200 hover:text-blue-300 duration-300 hover:duration-300">link</a></p>
-            <h2 class="break-normal text-gray-100">Todo los derechos reservados para Todo Informatica© S.L</h2>
+            <p class="break-normal text-gray-100">{% trans 'En caso de algun problema lease las condiciones de uso que pueden descargarse en el siguiente' %} <a href="{% url 'troll' %}" class="text-blue-200 hover:text-blue-300 duration-300 hover:duration-300">{% trans 'link' %}</a></p>
+            <h2 class="break-normal text-gray-100">{% trans 'Todo los derechos reservados para Todo Informatica© S.L' %}</h2>
         </footer>
     </body>
 </html>

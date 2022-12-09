@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
-{% block titulo %}Las Caracteristicas de la Tienda{% endblock %}
+{% load i18n %}
+
+{% block titulo %}{% trans 'Las Caracteristicas de la Tienda' %}{% endblock %}
 
 {% block contenido %}
 {% if articulo %}
@@ -8,15 +10,15 @@
     <div class=" w-full md:w-3/5 flex text-xl">
         <div class="items-center flex-grow space-y-1 py-1 my-24">
             <p class="font-bold text-4xl">{{articulo.nombre}}</p>
-            <p>Marca <span class="font-bold">{{articulo.marca}}</span></p>
-            <p>Precio: {{articulo.precio}}€</p>
+            <p>{% trans 'Marca:' %} <span class="font-bold">{{articulo.marca}}</span></p>
+            <p>{% trans 'Precio:' %} {{articulo.precio}}€</p>
             {% if articulo.stock %}
-                <p class="text-green-700 font-bold">Disponible</p>
+                <p class="text-green-700 font-bold">{% trans 'Disponible' %}</p>
             {% else %}
-                <p class="text-red-800 italic">Fuera de stock</p>
+                <p class="text-red-800 italic">{% trans 'Fuera de stock' %}</p>
             {% endif %}
-            <p>Categoria: <a href="{% url 'categoria' articulo.categoria.id%}" class="px-3 py-1 rounded-md bg-gray-300 hover:bg-blue-500 hover:text-white duration-200 text-lg">{{articulo.categoria}}</a></p>
-            <p>Tiendas:<p>
+            <p>{% trans 'Categoria:' %} <a href="{% url 'categoria' articulo.categoria.id%}" class="px-3 py-1 rounded-md bg-gray-300 hover:bg-blue-500 hover:text-white duration-200 text-lg">{{articulo.categoria}}</a></p>
+            <p>{% trans 'Tiendas:' %}<p>
                 {% if vendedor %}
                     <div class="space-y-1 py-1">
                         {% for t in vendedor %}
@@ -26,7 +28,7 @@
                         {% endfor %}
                     </div>
                 {% else %}
-                    <p class="text-red-800 italic">No hay tiendas disponibles</p>
+                    <p class="text-red-800 italic">{% trans 'No hay tiendas disponibles' %}</p>
                 {% endif %}
         </div>
         <div class="flex flex-grow justify-center items-center">
@@ -37,7 +39,7 @@
     
 </div>
 {% else %}
-    <p>Error al cargar el archivo</p>
+    <p>{% trans 'Error al cargar el archivo' %}</p>
 {% endif %}
 
 
