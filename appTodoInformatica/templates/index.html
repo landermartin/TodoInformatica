@@ -9,8 +9,25 @@
     <div class="flex flex-col justify-around">
       <p class="text-5xl text-white">Dados de la suerte</p>
       <p class="text-gray-100">Pulsa en los dados para ver si te toca un código promocional!</p>
+      <script type="text/javascript" src="{{ STATIC_URL }} /js/index.js"></script>
       <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery.js"></script>
-      <script src="{{ STATIC_URL }}/js/index.js"></script>
+      <script>
+      $(document).ready(function(){
+        $("#imagenDados").click(function(){
+          if (Math.floor(Math.random() * 100) <= 20) {
+            const cod = generarCodigo(6);
+            $("#codigoPromocion").text("Enhorabuena! Tu código es #" + cod); // establecer mensaje
+            $("#codigoPromocion").show(); // mostrar mensaje
+            $("#imagenDados").hide(); // quitar los dados
+          } else {
+            $("#codigoPromocion").text("Vaya! No ha habido suerte :("); // establecer mensaje
+            $("#codigoPromocion").show(); // mostrar mensaje
+            $("#imagenDados").hide(); // quitar los dados
+          }
+        });
+      });
+
+      </script>
     </div>
     <div class="flex items-center justify-center flex-grow mx-3">
       {% load static %}
@@ -18,5 +35,6 @@
       <p id="codigoPromocion" class="hidden text-white text-3xl">aaaa</p>
     </div>
   </div>
+
 </div>
 {% endblock %}
