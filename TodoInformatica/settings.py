@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'appTodoInformatica',
     'tailwind',
     'theme',
-    'django_browser_reload',
-    'rosetta'
+    'django_browser_reload'
 ]
 
 MIDDLEWARE = [
